@@ -1,0 +1,1354 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "EWS AfterSales P0 API",
+    "version": "0.1.0",
+    "description": "Inventário de rotas; API.md descreve corpos e regras. Sandbox apenas."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "/health",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "summary": "/ready",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        }
+      }
+    },
+    "/public/plans": {
+      "get": {
+        "summary": "/public/plans",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        }
+      }
+    },
+    "/public/contact": {
+      "post": {
+        "summary": "/public/contact",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "summary": "/auth/signup",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "/auth/login",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/session": {
+      "get": {
+        "summary": "/auth/session",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "summary": "/auth/logout",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/verify": {
+      "post": {
+        "summary": "/auth/verify",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/admin-confirm": {
+      "post": {
+        "summary": "/auth/admin-confirm",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/resend-verification": {
+      "post": {
+        "summary": "/auth/resend-verification",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "summary": "/auth/forgot-password",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "summary": "/auth/reset-password",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/organizations": {
+      "get": {
+        "summary": "/auth/organizations",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        }
+      }
+    },
+    "/auth/organization": {
+      "post": {
+        "summary": "/auth/organization",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/me/billing": {
+      "get": {
+        "summary": "/me/billing",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/plan": {
+      "put": {
+        "summary": "/me/plan",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/checkout": {
+      "post": {
+        "summary": "/me/checkout",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/reconcile": {
+      "post": {
+        "summary": "/me/reconcile",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/cancel": {
+      "post": {
+        "summary": "/me/cancel",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/organization": {
+      "get": {
+        "summary": "/me/organization",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "/me/organization",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/onboarding/complete": {
+      "post": {
+        "summary": "/me/onboarding/complete",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/team": {
+      "get": {
+        "summary": "/me/team",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/team/invite": {
+      "post": {
+        "summary": "/me/team/invite",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/auth/accept-invite": {
+      "post": {
+        "summary": "/auth/accept-invite",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/me/team/{id}": {
+      "delete": {
+        "summary": "/me/team/:id",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/me/requests": {
+      "post": {
+        "summary": "/me/requests",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/me/audit": {
+      "get": {
+        "summary": "/me/audit",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/webhooks/asaas": {
+      "post": {
+        "summary": "/webhooks/asaas",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ews/overview": {
+      "get": {
+        "summary": "/ews/overview",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/organizations": {
+      "get": {
+        "summary": "/ews/organizations",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/organizations/{id}": {
+      "get": {
+        "summary": "/ews/organizations/:id",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/ews/organizations/{id}/suspension": {
+      "post": {
+        "summary": "/ews/organizations/:id/suspension",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/ews/organizations/{id}/reconcile": {
+      "post": {
+        "summary": "/ews/organizations/:id/reconcile",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/ews/plans": {
+      "get": {
+        "summary": "/ews/plans",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/plans/{plan}": {
+      "put": {
+        "summary": "/ews/plans/:plan",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "plan",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/ews/inbox": {
+      "get": {
+        "summary": "/ews/inbox",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/events": {
+      "get": {
+        "summary": "/ews/events",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/jobs": {
+      "get": {
+        "summary": "/ews/jobs",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ]
+      }
+    },
+    "/ews/jobs/{id}/retry": {
+      "post": {
+        "summary": "/ews/jobs/:id/retry",
+        "responses": {
+          "200": {
+            "description": "Sucesso; ver API.md para payloads"
+          },
+          "400": {
+            "description": "Validação"
+          },
+          "401": {
+            "description": "Não autenticado"
+          },
+          "403": {
+            "description": "Não autorizado"
+          },
+          "409": {
+            "description": "Conflito"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "ews_session"
+      }
+    }
+  }
+}

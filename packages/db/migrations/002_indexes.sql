@@ -1,0 +1,12 @@
+CREATE INDEX memberships_by_user ON memberships(user_id,org_id);
+CREATE INDEX sessions_by_user ON sessions(user_id);
+CREATE INDEX sessions_expiry ON sessions(expires_at);
+CREATE INDEX tokens_by_user ON auth_tokens(user_id,kind);
+CREATE INDEX tokens_expiry ON auth_tokens(expires_at);
+CREATE INDEX invitations_by_org ON invitations(org_id,expires_at) WHERE accepted_at IS NULL;
+CREATE INDEX audits_by_org_date ON audit_logs(org_id,created_at DESC);
+CREATE INDEX subscriptions_by_state ON subscriptions(state);
+CREATE INDEX commands_by_org ON gateway_commands(org_id);
+CREATE INDEX requests_by_org ON service_requests(org_id,created_at DESC);
+CREATE INDEX webhooks_by_date ON webhook_events(received_at DESC);
+CREATE INDEX jobs_by_org ON jobs((payload->>'org')) WHERE completed_at IS NULL;

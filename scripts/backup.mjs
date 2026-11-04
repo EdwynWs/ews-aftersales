@@ -1,0 +1,14 @@
+import {spawn} from 'node:child_process';
+import {mkdir,chmod} from 'node:fs/promises';
+import path from 'node:path';
+const value=process.env.BACKUP_DATABASE_URL??process.env.MIGRATION_DATABASE_URL;
+if(!value)throw new Error('Defina BACKUP_DATABASE_URL com acesso de leitura a todos os tenants.');
+const db=new URL(value),dir=path.resolve(process.env.BACKUP_DIRECTORY??'backups');
+await mkdir(dir,{recursive:true,mode:0o700});
+const output=path.join(dir,`aftersales-${new Date().toISOString().replace(/[:.]/g,'-')}.dump`);
+const env={...process.env,PGHOST:db.hostname,PGPORT:db.port||'5432',PGUSER:decodeURIComponent(db.username),PGPASSWORD:decodeURIComponent(db.password),PGDATABASE:db.pathname.slice(1)};
+delete env.DATABASE_URL;delete env.MIGRATION_DATABASE_URL;delete env.BACKUP_DATABASE_URL;
+if(db.searchParams.get('sslmode'))env.PGSSLMODE=db.searchParams.get('sslmode');
+const child=spawn('pg_dump',['--format=custom','--no-owner','--file',output],{env,stdio:['ignore','inherit','inherit']});
+await new Promise((resolve,reject)=>{child.on('error',reject);child.on('exit',code=>code===0?resolve():reject(new Error(`pg_dump exited ${code}`)));});
+await chmod(output,0o600);console.log(`Backup criado: ${output}`);
